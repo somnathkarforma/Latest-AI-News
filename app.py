@@ -223,6 +223,7 @@ def render_html(
                 "<article class='card'>"
                 f"<h3><a href='{escape(article['url'], quote=True)}' target='_blank' rel='noreferrer'>{escape(article['title'])}</a></h3>"
                 f"<p>{escape(clean_text(article['summary'] or article['source']))}</p>"
+                f"<div class='card-actions'><a href='{escape(article['url'], quote=True)}' target='_blank' rel='noreferrer'>Read full article ↗</a></div>"
                 f"<div class='meta'><span>{escape(article['source'])}</span><span>{escape(clean_text(article['published'], 32) or 'Recent')}</span></div>"
                 "</article>"
             )
@@ -287,6 +288,18 @@ def render_html(
     .card a {{ color: var(--text); text-decoration: none; }}
     .card a:hover {{ color: var(--accent-2); }}
     .card p {{ color: var(--muted); line-height: 1.55; }}
+    .card-actions {{ margin: 12px 0 10px; }}
+    .card-actions a {{
+      display: inline-block;
+      background: rgba(124,156,255,.18);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 12px;
+      color: var(--accent-2);
+      font-size: 14px;
+      font-weight: 700;
+    }}
+    .card-actions a:hover {{ background: rgba(124,156,255,.28); color: #ffffff; }}
     .meta {{ display: flex; justify-content: space-between; gap: 10px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--border); padding-top: 10px; }}
     footer {{ color: var(--muted); margin-top: 22px; font-size: 13px; }}
     @media (max-width: 800px) {{ .grid {{ grid-template-columns: 1fr; }} }}
