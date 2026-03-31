@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <title>Latest AI News</title>
+  <style>
+    :root {
+      --bg: #08101f;
+      --panel: #101a31;
+      --panel-2: #142241;
+      --text: #edf2ff;
+      --muted: #9fb0d0;
+      --accent: #7c9cff;
+      --accent-2: #5eead4;
+      --border: rgba(159, 176, 208, 0.18);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #050b16, var(--bg));
+      color: var(--text);
+    }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 32px 20px 56px; }
+    .hero {
+      background: linear-gradient(135deg, rgba(124,156,255,.20), rgba(94,234,212,.12));
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.22);
+    }
+    .eyebrow { color: var(--accent-2); text-transform: uppercase; font-size: 12px; letter-spacing: 0.18em; }
+    h1 { margin: 10px 0 12px; font-size: clamp(30px, 5vw, 46px); }
+    .lead { color: var(--muted); line-height: 1.6; max-width: 760px; }
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-top: 20px; }
+    .stat { background: rgba(16,26,49,.82); border: 1px solid var(--border); border-radius: 14px; padding: 14px; }
+    .stat span { display: block; color: var(--muted); font-size: 12px; margin-bottom: 6px; }
+    .stat strong { font-size: 18px; }
+    .grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 18px; margin-top: 18px; }
+    .panel { background: var(--panel); border: 1px solid var(--border); border-radius: 16px; padding: 20px; }
+    .panel h2 { margin-top: 0; font-size: 20px; }
+    ul { margin: 0; padding-left: 20px; line-height: 1.6; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; margin-top: 18px; }
+    .card { background: var(--panel-2); border: 1px solid var(--border); border-radius: 16px; padding: 16px; }
+    .card h3 { margin: 0 0 10px; font-size: 17px; }
+    .card a { color: var(--text); text-decoration: none; }
+    .card a:hover { color: var(--accent-2); }
+    .card p { color: var(--muted); line-height: 1.55; }
+    .meta { display: flex; justify-content: space-between; gap: 10px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--border); padding-top: 10px; }
+    footer { color: var(--muted); margin-top: 22px; font-size: 13px; }
+    @media (max-width: 800px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <main class='wrap'>
+    <section class='hero'>
+      <div class='eyebrow'>Automated daily briefing</div>
+      <h1>Latest AI News</h1>
+      <p class='lead'>8 recent AI stories were collected from Google News RSS. Add a Gemini API key to turn the headlines into a richer automated briefing.</p>
+      <div class='stats'><div class='stat'><span>Stories reviewed</span><strong>8</strong></div><div class='stat'><span>Source</span><strong>Google News RSS</strong></div><div class='stat'><span>Status</span><strong>Tavily API key not configured</strong></div></div>
+    </section>
+
+    <section class='grid'>
+      <div class='panel'>
+        <h2>Top Highlights</h2>
+        <ul><li>As Trump rolls back protections, Governor Newsom signs first-of-its-kind executive order to strengthen AI protections and responsible use — &lt;a href=&quot;https://news.google.com/rss/articles/CBMigAJBVV95cUxNWUdqM2NTdE1BcENPWnNXTzJzcjVjOTJwc25fbVg3NEZOaTZKSTZubngwYWNLMDUzeS0tUDh3eVVrM…</li><li>Who Decides How America Uses AI in War? — &lt;a href=&quot;https://news.google.com/rss/articles/CBMid0FVX3lxTE14dk1hMzI5Z1R5emNKd1lXTDRtNXJPUFFTSklwSXNtVHcyVjZwQnhiVDQ2UndoOW1xeUloZ0ZLTVNTc…</li><li>University of Florida heads Florida K-12 AI Education Task Force — &lt;a href=&quot;https://news.google.com/rss/articles/CBMiX0FVX3lxTFBPbDZBU19IR3gtdml4dlN3Nm1yZ0RPQk1qd2Q0THU3Z0VyRWFaU3ZyZGNfNm81RWxyM2dwV0dDTW1qQ…</li><li>SFSU launches first-ever student AI awards — &lt;a href=&quot;https://news.google.com/rss/articles/CBMieEFVX3lxTFA2dnZBR28tSFBmUFNjeVBBX1BZT2VrZS1CbGFxamhtd3JSNzdqT3BsT3ExMXR6SzdfeFpIZU5OUERuS…</li><li>President Connie Ledoux Book discusses workforce and AI at Alamance Growth Summit in Triad Business Journal — &lt;a href=&quot;https://news.google.com/rss/articles/CBMi4AFBVV95cUxNNFlhc0FPUDQ0Y29HMFlndF9TaVFnd2Y3YWVDYlU1MlBFRnBIdTB0LXRwUi1LV2M2YVYtUXlqS25sT…</li></ul>
+      </div>
+      <div class='panel'>
+        <h2>What to Watch</h2>
+        <ul><li>Major model launches and benchmark jumps</li><li>Enterprise copilots, partnerships, and funding news</li><li>Regulatory or safety announcements from major labs</li></ul>
+      </div>
+    </section>
+
+    <section class='cards'>
+      <article class='card'><h3><a href='https://news.google.com/rss/articles/CBMigAJBVV95cUxNWUdqM2NTdE1BcENPWnNXTzJzcjVjOTJwc25fbVg3NEZOaTZKSTZubngwYWNLMDUzeS0tUDh3eVVrMnlIMHpPM3Naa2dWTUJkbUQ2LVp5Zm9fanNDMHBoVUx5YU12NDdnZDlCZG1aNHk1V0hQcmhDUERnc3Vkd2ZFV0w3eUVyVXlVTWlNMEFFVkR0RWhreTZMMnpDSHgwU0U1VmxlcFhhRHpTNjA1OVV0ak92ZWExb1kzeDV3RjJQc3Uxc3NXTHRMOVZuRHlfMnhNMDd6eXBNRnRXUzhUNndVVm4ydUd3c1hfaFIwZl9mX3dDMzBPQ0pHanpta1o4U0xG?oc=5' target='_blank' rel='noreferrer'>As Trump rolls back protections, Governor Newsom signs first-of-its-kind executive order to strengthen AI protections and responsible use</a></h3><p>&lt;a href=&quot;https://news.google.com/rss/articles/CBMigAJBVV95cUxNWUdqM2NTdE1BcENPWnNXTzJzcjVjOTJwc25fbVg3NEZOaTZKSTZubngwYWNLMDUzeS0tUDh3eVVrMnlIMHpPM3Naa2dWTUJkbUQ2LVp5Zm9fanNDMHBoV…</p><div class='meta'><span>California State Portal | CA.gov</span><span>Mon, 30 Mar 2026 21:53:41 GMT</span></div></article><article class='card'><h3><a href='https://news.google.com/rss/articles/CBMid0FVX3lxTE14dk1hMzI5Z1R5emNKd1lXTDRtNXJPUFFTSklwSXNtVHcyVjZwQnhiVDQ2UndoOW1xeUloZ0ZLTVNTcENLOTY3REU4NEpLTFNPQTN4MklLQTVIdDBxc0g3bWlTbDhLbU8tSWlwVlhzZnJoYURxUkI4?oc=5' target='_blank' rel='noreferrer'>Who Decides How America Uses AI in War?</a></h3><p>&lt;a href=&quot;https://news.google.com/rss/articles/CBMid0FVX3lxTE14dk1hMzI5Z1R5emNKd1lXTDRtNXJPUFFTSklwSXNtVHcyVjZwQnhiVDQ2UndoOW1xeUloZ0ZLTVNTcENLOTY3REU4NEpLTFNPQTN4MklLQTVIdDBxc0g3b…</p><div class='meta'><span>Stanford HAI</span><span>Mon, 30 Mar 2026 21:48:49 GMT</span></div></article><article class='card'><h3><a href='https://news.google.com/rss/articles/CBMiX0FVX3lxTFBPbDZBU19IR3gtdml4dlN3Nm1yZ0RPQk1qd2Q0THU3Z0VyRWFaU3ZyZGNfNm81RWxyM2dwV0dDTW1qQ1I4T2xaSWJQTmkzWWhNbWxqV0tXalJ3WGUwdC1j?oc=5' target='_blank' rel='noreferrer'>University of Florida heads Florida K-12 AI Education Task Force</a></h3><p>&lt;a href=&quot;https://news.google.com/rss/articles/CBMiX0FVX3lxTFBPbDZBU19IR3gtdml4dlN3Nm1yZ0RPQk1qd2Q0THU3Z0VyRWFaU3ZyZGNfNm81RWxyM2dwV0dDTW1qQ1I4T2xaSWJQTmkzWWhNbWxqV0tXalJ3WGUwdC1j?…</p><div class='meta'><span>news.ufl.edu</span><span>Mon, 30 Mar 2026 20:09:00 GMT</span></div></article><article class='card'><h3><a href='https://news.google.com/rss/articles/CBMieEFVX3lxTFA2dnZBR28tSFBmUFNjeVBBX1BZT2VrZS1CbGFxamhtd3JSNzdqT3BsT3ExMXR6SzdfeFpIZU5OUERuSDhrbHRrZDFTcFlyVy01NlgzZ3B3UVZEZkVROE5CbzBZQzYwRGhHczRlZW1wN1NoRjdsT1FXVg?oc=5' target='_blank' rel='noreferrer'>SFSU launches first-ever student AI awards</a></h3><p>&lt;a href=&quot;https://news.google.com/rss/articles/CBMieEFVX3lxTFA2dnZBR28tSFBmUFNjeVBBX1BZT2VrZS1CbGFxamhtd3JSNzdqT3BsT3ExMXR6SzdfeFpIZU5OUERuSDhrbHRrZDFTcFlyVy01NlgzZ3B3UVZEZkVROE5Cb…</p><div class='meta'><span>SF State News</span><span>Mon, 30 Mar 2026 17:33:20 GMT</span></div></article><article class='card'><h3><a href='https://news.google.com/rss/articles/CBMi4AFBVV95cUxNNFlhc0FPUDQ0Y29HMFlndF9TaVFnd2Y3YWVDYlU1MlBFRnBIdTB0LXRwUi1LV2M2YVYtUXlqS25sTEZPTFFoWkwwdW1zQ3JKRHJGX2J0bjlSRFhiUVJHM0xZODl0V0hZMTF5aV9pckVyR2wyTUptSmxsQUJNQmhrb21seUwwTDZlLThoYjhtanpnWDVHM0ZfNHR1RTN4WW94SlBlcEE0Zm95bWdWZ0I1MUwyYUxrb0ZjcDBGdllvQk1WNGNjTkhibDNNTWhRMG4tbzlIY216LXpTUVhaUlRmOQ?oc=5' target='_blank' rel='noreferrer'>President Connie Ledoux Book discusses workforce and AI at Alamance Growth Summit in Triad Business Journal</a></h3><p>&lt;a href=&quot;https://news.google.com/rss/articles/CBMi4AFBVV95cUxNNFlhc0FPUDQ0Y29HMFlndF9TaVFnd2Y3YWVDYlU1MlBFRnBIdTB0LXRwUi1LV2M2YVYtUXlqS25sTEZPTFFoWkwwdW1zQ3JKRHJGX2J0bjlSRFhiUVJHM…</p><div class='meta'><span>Elon University</span><span>Mon, 30 Mar 2026 22:18:45 GMT</span></div></article><article class='card'><h3><a href='https://news.google.com/rss/articles/CBMigwFBVV95cUxOeS1XOVk2U21XSmJYS2pZTzlFUGNEYml6ZWQwbGg4MW5kSDdzd3VvOGNRS0c2MmVOTFJqVUxvTFJTSUNObUNJaGVueGhkbzd4VHpjTEZ6eW1jYndEd0F2MkdMdFpLS295ODdLQjl0Z1oycHNkRTFzdHFFM1I4R1plSDRoaw?oc=5' target='_blank' rel='noreferrer'>AI, Expertise, and Administrative Law</a></h3><p>&lt;a href=&quot;https://news.google.com/rss/articles/CBMigwFBVV95cUxOeS1XOVk2U21XSmJYS2pZTzlFUGNEYml6ZWQwbGg4MW5kSDdzd3VvOGNRS0c2MmVOTFJqVUxvTFJTSUNObUNJaGVueGhkbzd4VHpjTEZ6eW1jYndEd0F2M…</p><div class='meta'><span>Penn Carey Law School</span><span>Mon, 30 Mar 2026 17:58:17 GMT</span></div></article><article class='card'><h3><a href='https://news.google.com/rss/articles/CBMihwFBVV95cUxNSmozRmFqSk42XzJFaFFrc2g0TFh4cW9jcVA2NnIzLURldkJpOHJVTVczQ2hzLWdfSnJSRENkMU9zYmxGTXIxQWxWS0JXSGY1aWU4Zy1RV2xuWE55dl9SUUhzMFRPUE5qbE1sODA3cVJMY3k2SGpFSDZpOGtVWEFOc3FEUmxlMlE?oc=5' target='_blank' rel='noreferrer'>What to Know About California’s Executive Order on A.I.</a></h3><p>&lt;a href=&quot;https://news.google.com/rss/articles/CBMihwFBVV95cUxNSmozRmFqSk42XzJFaFFrc2g0TFh4cW9jcVA2NnIzLURldkJpOHJVTVczQ2hzLWdfSnJSRENkMU9zYmxGTXIxQWxWS0JXSGY1aWU4Zy1RV2xuWE55dl9SU…</p><div class='meta'><span>The New York Times</span><span>Mon, 30 Mar 2026 21:45:00 GMT</span></div></article><article class='card'><h3><a href='https://news.google.com/rss/articles/CBMijgFBVV95cUxNQ0FrX0xGSHZQZkw0MDFRNWllYkNFM2g2aWRpRnpEZThUeG83NlFLTVBIaS1mbDRvWGtHRGp5SGRyMzVNdi1fOTFIcm9KLUo4dmkzQ0d0WHB1bkZwRmVDb3VTcFlUZkJNd0Z3NXRTTVRReHRlOEpVRllfT1VEN2lvbGJtV0VCczY5dVBLMXp3?oc=5' target='_blank' rel='noreferrer'>Quilty, AI Platform Designed to Change How Scripts Are Developed and Assessed, Launches (EXCLUSIVE)</a></h3><p>&lt;a href=&quot;https://news.google.com/rss/articles/CBMijgFBVV95cUxNQ0FrX0xGSHZQZkw0MDFRNWllYkNFM2g2aWRpRnpEZThUeG83NlFLTVBIaS1mbDRvWGtHRGp5SGRyMzVNdi1fOTFIcm9KLUo4dmkzQ0d0WHB1bkZwRmVDb…</p><div class='meta'><span>Variety</span><span>Mon, 30 Mar 2026 17:43:00 GMT</span></div></article>
+    </section>
+
+    <footer>
+      <div>Generated: 2026-03-31 00:30 UTC</div>
+      <div>Pipeline: GitHub Actions → Python → Gemini/Tavily → GitHub Pages</div>
+      <div>Status: Tavily API key not configured</div>
+    </footer>
+  </main>
+</body>
+</html>
