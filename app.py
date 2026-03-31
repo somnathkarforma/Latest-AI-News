@@ -86,7 +86,7 @@ def fetch_google_news_rss() -> tuple[list[dict[str, str]], str]:
                 "title": title.strip(),
                 "url": (item.findtext("link") or "").strip(),
                 "source": source.strip(),
-                "summary": (item.findtext("description") or "").strip(),
+                "summary": clean_text(item.findtext("description") or "", 280),
                 "published": (item.findtext("pubDate") or "").strip(),
             }
         )
@@ -192,9 +192,13 @@ def build_fallback_summary(
 
 def clean_text(value: str, limit: int = 180) -> str:
     cleaned = unescape(value or "")
-    cleaned = re.sub(r"<[^>]+>", " ", cleaned)
+    cleaned = re.sub(r"(?is)<a\b[^>]*>", " ", cleaned)
+    cleaned = re.sub(r"(?is)</a>", " ", cleaned)
+    cleaned = re.sub(r"(?i)href\s*=\s*[\"']?[^\"'>\s]+", " ", cleaned)
+    cleaned = re.sub(r"(?is)<[^>]+>", " ", cleaned)
     cleaned = re.sub(r"https?://\S+|www\.\S+", " ", cleaned)
-    compact = re.sub(r"\s+", " ", cleaned).strip(" -–|\t\n\r")
+    cleaned = re.sub(r"[<>\"']", " ", cleaned)
+    compact = re.sub(r"\s+", " ", cleaned).strip(" -–|:\t\n\r")
     if not compact:
         compact = "Open the story for full details."
     if len(compact) <= limit:
