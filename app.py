@@ -100,7 +100,7 @@ def collect_articles() -> tuple[list[dict[str, str]], str, list[str]]:
         try:
             articles, label = fetcher()
             if articles:
-                return articles, label, notes
+                return articles, label, []
             notes.append(label)
         except Exception as exc:  # pragma: no cover - network failures are environment-specific
             notes.append(f"{fetcher.__name__} failed: {exc}")
@@ -173,7 +173,7 @@ def build_fallback_summary(
             "Once the workflow runs in GitHub Actions, the homepage will refresh automatically."
         )
 
-    status_note = "; ".join(notes) if notes else "Live mode ready"
+    status_note = f"Using {source_label} data" if articles else "; ".join(notes) if notes else "Live mode ready"
     return {
         "lead": lead,
         "highlights": highlights,
