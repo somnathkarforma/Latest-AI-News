@@ -6,7 +6,7 @@ import re
 import textwrap
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
-from html import escape
+from html import escape, unescape
 from pathlib import Path
 from typing import Any
 from urllib.parse import quote_plus, urlparse
@@ -191,7 +191,12 @@ def build_fallback_summary(
 
 
 def clean_text(value: str, limit: int = 180) -> str:
-    compact = re.sub(r"\s+", " ", (value or "").strip())
+    cleaned = unescape(value or "")
+    cleaned = re.sub(r"<[^>]+>", " ", cleaned)
+    cleaned = re.sub(r"https?://\S+|www\.\S+", " ", cleaned)
+    compact = re.sub(r"\s+", " ", cleaned).strip(" -–|\t\n\r")
+    if not compact:
+        compact = "Open the story for full details."
     if len(compact) <= limit:
         return compact
     return compact[: limit - 1].rstrip() + "…"
