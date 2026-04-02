@@ -311,10 +311,12 @@ def render_html(
     .card-actions a:hover {{ background: rgba(124,156,255,.28); color: #ffffff; }}
     .meta {{ display: flex; justify-content: space-between; gap: 10px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--border); padding-top: 10px; }}
     footer {{ color: var(--muted); margin-top: 22px; font-size: 13px; }}
+    .timestamp {{ position: fixed; top: 16px; right: 20px; background: rgba(16, 26, 49, 0.85); border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px; color: var(--muted); font-size: 12px; z-index: 1000; }}
     @media (max-width: 800px) {{ .grid {{ grid-template-columns: 1fr; }} }}
   </style>
 </head>
 <body>
+  <div class='timestamp'>Refreshed: {generated_at}</div>
   <main class='wrap'>
     <section class='hero'>
       <div class='eyebrow'>Automated daily briefing</div>
